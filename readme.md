@@ -114,7 +114,6 @@ Local layouts can also be specified when rendering a template, just like partial
 in Handlebars.
 
 ```js
-var root = '<div>{{{content}}}</div>';
 var template = hbx.compile('{{! layout: root }}\nhello');
-assert.equal(template({ layouts: { root: root } }), '<div>hello</div>');
+template({ layouts: { root: '<div>{{{content}}}</div>' } });
 ```
