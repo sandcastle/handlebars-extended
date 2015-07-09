@@ -1,0 +1,34 @@
+{
+  "name": "hbx",
+  "version": "1.0.0",
+  "description": "Handlebars extended (HBX) with nested layout support",
+  "author": "Glenn Morton",
+  "license": "MIT",
+  "main": "index.js",
+  "readme": "readme.md",
+  "scripts": {
+    "test": "node ./node_modules/.bin/mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandcastle/handlebars-extended.git"
+  },
+  "homepage": "https://github.com/sandcastle/handlebars-extended",
+  "bugs": {
+    "url": "https://github.com/sandcastle/handlebars-extended/issues"
+  },
+  "keywords": [
+    "handlebars",
+    "layout",
+    "extended",
+    "template"
+  ],
+  "dependencies": {
+    "handlebars": "^3.0.3",
+    "lodash": "^3.10.0"
+  },
+  "devDependencies": {
+    "assert": "^1.3.0",
+    "mocha": "^2.2.5"
+  }
+}
