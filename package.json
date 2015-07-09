@@ -1,5 +1,5 @@
 {
-  "name": "hbx",
+  "name": "handlebars-extended",
   "version": "1.0.0",
   "description": "Handlebars extended (HBX) with nested layout support",
   "author": "Glenn Morton",
