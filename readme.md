@@ -1,5 +1,7 @@
 # Handlebars Extended (HBX)
 
+[![Build Status](https://travis-ci.org/sandcastle/handlebars-extended.svg)](https://travis-ci.org/sandcastle/handlebars-extended)
+
 A lightweight wrapper around the popular Handlebars library to add support
 for nested layouts.
 
