@@ -5,7 +5,6 @@
   "author": "Glenn Morton",
   "license": "MIT",
   "main": "index.js",
-  "readme": "readme.md",
   "scripts": {
     "test": "node ./node_modules/.bin/mocha test/**/*.js"
   },
