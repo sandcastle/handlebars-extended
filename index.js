@@ -39,14 +39,12 @@ handlebars.compile = function(tmpl, compileOpts){
     var compiled = originalCompile(meta.tmpl);
     
     return function render(){        
-        return meta.layout ? renderNested(arguments) : compiled(arguments);
+        return meta.layout ? renderNested.apply(this, arguments) : compiled.apply(this, arguments);
     };
     
     function renderNested(data, options){
         
-        options = options || {};
-        var layouts = _.assign(handlebars.layouts, options.layouts || {});
-        
+        var layouts = _.assign(handlebars.layouts, options.layouts || {});        
         return renderLayout(data, options, layouts, meta.layout, compiled(data, options));
     }
     

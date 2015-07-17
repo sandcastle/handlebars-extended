@@ -53,32 +53,37 @@ describe('hbx', function(){
             
             it('should strip empty whitespace after the layout declaration', function(){
                 
-                var template = hbx.compile('{{! layout: root }}\n');
+                var data = { quote: 'hello' };
+                var template = hbx.compile('{{! layout: root }}\n{{quote}}');
                 hbx.registerLayout('root', '{{{content}}}');
-                assert.equal(template({}), '');
+                assert.equal(template(data, {}), 'hello');
             });
             
             it('should nest template in global layout', function(){
                 
-                var template = hbx.compile('{{! layout: root }}\nhello');
+                var data = { quote: 'hello' };
+                var template = hbx.compile('{{! layout: root }}\n{{quote}}');
                 hbx.registerLayout('root', '<div>{{{content}}}</div>');
-                assert.equal(template({}), '<div>hello</div>');
+                assert.equal(template(data, {}), '<div>hello</div>');
             });
             
             it('should nest template in local layout', function(){
                 
+                var data = { quote: 'hello' };
                 var root = '<div>{{{content}}}</div>';
-                var template = hbx.compile('{{! layout: root }}\nhello');
-                assert.equal(template({ layouts: { root: root } }), '<div>hello</div>');
+                var context = { layouts: { root: root } };
+                var template = hbx.compile('{{! layout: root }}\n{{quote}}');
+                assert.equal(template(data, context), '<div>hello</div>');
             });
             
             it('should nest layouts within layouts', function(){
-                                
-                var template = hbx.compile('{{! layout: three }}\nhello');                
+                  
+                var data = { quote: 'hello' };              
+                var template = hbx.compile('{{! layout: three }}\n{{quote}}');                
                 hbx.registerLayout('one', '<div class="one">{{{content}}}</div>');
                 hbx.registerLayout('two', '{{! layout: one }}<div class="two">{{{content}}}</div>');
                 hbx.registerLayout('three', '{{! layout: two }}<div class="three">{{{content}}}</div>');
-                assert.equal(template({}), '<div class="one"><div class="two"><div class="three">hello</div></div></div>');
+                assert.equal(template(data, {}), '<div class="one"><div class="two"><div class="three">hello</div></div></div>');
             });
             
         });
