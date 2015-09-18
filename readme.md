@@ -41,7 +41,7 @@ The example below shows how a Handlebars content page can be nested within a lay
 #### Code
 
 ```js
-var hbx = require('hbx');
+var hbx = require('handlebars-extended');
 
 // register the global layout
 hbx.registerLayout('root', '<FROM ROOT.HBS>');
