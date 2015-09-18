@@ -35,7 +35,7 @@ The example below shows how a Handlebars content page can be nested within a lay
 ```hbs
 {{! layout: root}}
 <h1>Welcome page</h1>
-{{quote}}
+{{question}}
 ```
 
 #### Code
