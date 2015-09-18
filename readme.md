@@ -11,7 +11,7 @@ for nested layouts.
 The package can be installed with the following command:
 
 ```sh
-npm install hbx --save
+npm install handlebars-extended --save
 ```
 
 
